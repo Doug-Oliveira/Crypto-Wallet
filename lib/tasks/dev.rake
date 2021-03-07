@@ -7,8 +7,9 @@ namespace :dev do
     show_spinner("Apagando BD") {%x(rails db:drop)}
     show_spinner("Criando BD") {%x(rails db:create)}
     show_spinner("Migrand BD") {%x(rails db:migrate)}
-    %x(rails dev:add_coins)
     %x(rails dev:add_mining_types)
+    %x(rails dev:add_coins)
+    
   else
   puts "!--Você não esta em Ambiente de Desenvolvimento--!"
     end
@@ -24,15 +25,18 @@ namespace :dev do
   {
       description:"Bitcoin",
       acronym: "BTC",
-      url_image:"https://assets.chinatechnews.com/wp-content/uploads/bitcoin-logo.jpg"},
+      url_image:"https://assets.chinatechnews.com/wp-content/uploads/bitcoin-logo.jpg",
+      mining_type: MiningType.find_by(acronym: 'PoW')},
   {
       description:"Ethereum",
       acronym: "ETC",
-      url_image:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/471px-Ethereum_logo_2014.svg.png"},
+      url_image:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/471px-Ethereum_logo_2014.svg.png",
+      mining_type: MiningType.all.sample},
   {
       description:"Dash",
       acronym: "DASH",
-      url_image:"https://cryptologos.cc/logos/dash-dash-logo.png"}
+      url_image:"https://cryptologos.cc/logos/dash-dash-logo.png",
+      mining_type: MiningType.all.sample}
   ]
 
 #find_or_create_by! => metodo do ActiveRecord que não deixa que um campo seja recriado caso ele já exista.
@@ -54,7 +58,7 @@ task add_mining_types: :environment do
       description: "Proof of Stake", 
       acronym: "PoS"},
     {
-      description: "Proof of Capacoty", 
+      description: "Proof of Capacity", 
       acronym: "PoC"}
     ]
 

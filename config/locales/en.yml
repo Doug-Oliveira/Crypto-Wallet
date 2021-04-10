@@ -30,4 +30,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  actual_locale: English
   hello: "Hello world"
+  welcome: "Welcome!"
+  welcome_mensage: "This is CryptoWallet, an app for you to register and track your crypto-currencies."
+
+  links:
+    edit: Edit
+    show: Show
+    delete: Delete

@@ -1,0 +1,9 @@
+pt-BR:
+  hello: "Ola mundo"
+  welcome: "Seja Bem-Vindo!"
+  welcome_mensage: "Este é o CryptoWallet, um app para você cadastrar e acompanhar as suas crypto-moedas."
+  links:
+    edit: Editar
+    show: Mostrar
+    delete: Apagar
+    new: Novo

@@ -11,7 +11,6 @@ module ApplicationHelper
         "Desenvolvimento"
       elsif Rails.env.production?
       "Produção"
-    
     else
     "Teste"
         end

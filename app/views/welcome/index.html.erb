@@ -1,9 +1,13 @@
-<h1>Seja Bem-Vindo</h1>
-<p>O idioma usado é: <%= I18n.locale %></p>
-<p>Data: <%= data_br(Date.today)%></p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%=t('welcome')%></h1>
+    <p class="lead"><%=t('welcome_mensage')%>Este é o CryptoWallet, um app para você cadastrar e acompanhar as suas crypto-moedas</p>
+    <hr class="my-4">
+      <p>Para começar selecione uma das opções abaixo:</p>
+    <p class="lead">
+    <%= render "menu"%>
+  </p>
 
-<%= render "menu"%>
+  </div>
+</div>
 
-<p>Você está em ambiente de : <%=ambiente_rails%></p>
-
-<p>Isto é uma variavel de instancia => <%=@nome%></p>

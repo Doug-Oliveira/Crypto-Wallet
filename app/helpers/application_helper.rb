@@ -1,6 +1,5 @@
 module ApplicationHelper
 
-
   #É apenas um metodo que pode ser usado em qualquer ponto da View
     def data_br(data_us)
       data_us.strftime("%d/%m/%Y")        
